@@ -851,8 +851,6 @@ static Symbol garg(int n){
 public static class FnReader extends AFn{
 	public Object invoke(Object reader, Object lparen, Object opts, Object pendingForms) {
 		PushbackReader r = (PushbackReader) reader;
-		if(ARG_ENV.deref() != null)
-			throw new IllegalStateException("Nested #()s are not allowed");
 		try
 			{
 			Var.pushThreadBindings(
